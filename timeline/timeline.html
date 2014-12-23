@@ -1,0 +1,104 @@
+<html>
+<head>
+    <title>Timeline demo MHA</title>
+    <link rel="stylesheet" type="text/css" href="css/timeline2.min.css">
+    <!-- <link rel="stylesheet" href="css/pikaday.css"> -->
+    
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <!-- <script type="text/javascript" src="jquery-1.11.1.min.js"></script> -->
+    <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.0.5/js/jquery.tooltipster.min.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.0.5/css/tooltipster.min.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/themes/tooltipster-light.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/themes/tooltipster-punk.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/themes/tooltipster-shadow.css" /> -->
+    <!-- <script src="http://maps.google.com/maps/api/js?sensor=false&amp;language=en"></script> -->
+    <!--  <script type="text/javascript" src = "js/gmap3.min.js"></script> -->
+
+
+    <style type="text/css">
+        body, html {
+            font-family: 'Yanone Kaffeesatz', sans-serif;
+            position: relative;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        input {
+            font-family: 'Yanone Kaffeesatz', sans-serif;
+            font-size: 18;
+            font-weight: 300;
+            margin-right: 20px;
+        }
+
+        #guide{
+            font-family: FontAwesome;
+            text-indent: 1em;
+            margin-bottom: 10px;
+        }
+        p{
+            /*text-indent: 1em;*/
+            /*padding: 0px 55px 0px 15px;*/
+           /* margin: 20px;
+            text-align: left;*/
+        }
+
+        /* custom styles for individual items, load this after timeline.css */
+
+        #mytimeline {
+            height: -webkit-calc(100% - 85px);
+            height: calc(100% - 85px);
+            overflow-y: auto;
+            margin : 10px 20px;
+            width: -webkit-calc(100% - 40px);
+            width: calc(100% - 40px);
+        }
+        #date_select {
+            margin: 0 20px;
+        }
+        .text{
+            color:#049265;
+        }
+    </style>
+
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="js/timeline_inventor.min.js"></script>
+
+
+</head>
+
+<body>
+    
+    
+<!-- <div id="date_select">
+    Start Time: <input type="text" id="startDate" value="">
+    End Time:   <input type="text" id="endDate" value="">
+    <input class= 'button' type="button" id="setRange" value="Set time" onclick="setTime();">
+    <input class= 'button' type="button" id="setCurrentTime" value="Current time" onclick="setCurrentTime();">
+</div> -->
+<div id="mytimeline"></div>
+
+<!-- Information about where the used icons come from -->
+<!-- <div id = "time" style = "color: steelblue; margin-left : 10px"></div> -->
+
+
+<script>
+    var f= document.getElementById('mytimeline');
+    window.onscroll = function (){
+        f.scrollTop = document.body.scrollTop;
+
+    }
+</script>
+
+
+<!-- <div id = 'guide'></div> -->
+
+    <script type="text/javascript" src="js/script2_inventor.min.js"></script>
+    <!-- // <script type="text/javascript" src="js/pikaday.js"></script> -->
+
+</body>
+</html>

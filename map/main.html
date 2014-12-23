@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta name="apple-mobile-web-app-capable" content="no">
+        <title>OpenLayers Editing Toolbar Example</title>
+        
+
+        <link rel="stylesheet" href="styleWh.css" type="text/css">
+		<!--lib js -->
+        <script src="./lib/OpenLayers.js"></script>
+        <script src="./lib/Firebug/firebug.js"></script>
+		<!-- jquery UI-->
+		<script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="../bower_components/jqueryui/ui/minified/jquery-ui.custom.min.js"></script>
+		<link rel="stylesheet" href="../bower_components/jqueryui/themes/ui-lightness/jquery.ui.theme.css" type="text/css" />
+		<!--reference js-->
+		<script src="./extend/EditingToolbarWh.js"></script>
+		<script src="./extend/PointWh.js"></script>
+
+		<!-- measure UI-->
+		<link rel="stylesheet" href="./theme/default/style.css" type="text/css">
+		<link rel="stylesheet" href="style.css" type="text/css">
+		<!-- google map UI-->
+		    <link rel="stylesheet" href="./theme/default/google.css" type="text/css">
+        <script src='http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAjpkAC9ePGem0lIq5XcMiuhR_wWLPFku8Ix9i2SXYRVK3e45q1BQUd_beF8dtzKET_EteAjPdGDwqpQ'></script>
+		 <!-- main interface UI-->
+		<script src="main.js"></script>	
+		
+		<style type="text/css">
+        #controlToggle li {
+            list-style: none;
+        }
+        p {
+            width: 512px;
+        }
+        #options {
+            position: relative;
+            width: 512px;
+        }
+        #output {
+            float: right;
+        }
+
+        /* avoid pink tiles */
+        .olImageLoadError {
+            background-color: transparent !important;
+        }
+		/* statistic */
+		    #ul {
+                list-style: none;
+                padding-left: 2em;
+            }
+            #reset {
+                margin-left: 2em;
+            }
+    </style>
+
+
+    </head>
+    <body onload="init()">
+		<!-- olControlEditingToolbar  is parent node of css ,must leave it in the document or the 
+			.olControlEditingToolbar .olControlDrawFeaturePoint in style.css won't work
+		-->
+		<!--main map-->
+        <div id="map" class="bigmap" style="width: 100%;height: 400px;"></div>
+		<!--control panel tools-->
+		<div id="panel" class="olControlEditingToolbarWh"></div>
+		 <!--widgets-->
+		 <div id="options">
+			<div id="output"></div>
+			<ul id="controlToggle">
+
+				<li>
+					<input type="radio" name="type" value="line" id="lineToggle" onclick="toggleControl(this);" />
+					<label for="lineToggle">measure distance</label>
+				</li>
+				<li>
+					<input type="radio" name="type" value="polygon" id="polygonToggle" onclick="toggleControl(this);" />
+					<label for="polygonToggle">measure area</label>
+				</li>
+				
+				<li>
+					<input type="radio" name="type" value="none" id="noneToggle"
+						   onclick="toggleControl(this);" checked="checked" />
+					<label for="noneToggle">navigate</label>
+				</li>
+				<!-- <li>
+					<input type="checkbox" name="geodesic" id="geodesicToggle" onclick="toggleGeodesic(this);" />
+					<label for="geodesicToggle">use geodesic measures</label>
+				</li>
+				<li>
+					<input type="checkbox" name="immediate" id="immediateToggle" onclick="toggleImmediate(this);" />
+					<label for="immediateToggle">use immediate measures</label>
+				</li> -->
+			</ul>
+			<div id="clusterOutput"></div>
+			 <!--p>Cluster details: <span id="clusterOutput">hover over a feature to see details.</span></p-->
+		   <ul >
+            <li>
+                <input id="distance" name="distance" type="text" value="" size="3" />
+                <label for="distance">distance</label>
+            </li>
+            <li>
+                <input id="threshold" name="threshold" type="text" value="" size="3" />
+                <label for="threshold">threshold</label>
+            </li>
+        </ul>
+        <button id="resetCluster">recluster</button>
+		</div>
+
+        <div id="docs"></div>
+    </body>
+</html>

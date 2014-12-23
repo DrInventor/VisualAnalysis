@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>MyHealthAvatar Diary Calendar outside the scheduler</title>
+
+
+	 <!--script src="ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js "></script-->
+	<link href="css/smoothness/jquery-ui-1.10.4.custom.css" rel="stylesheet">
+	<script src="js/jquery-1.10.2.js"></script>
+	<script src="js/jquery-ui-1.10.4.custom.js"></script>
+	
+
+	<link href="css/timepicker.css" rel="stylesheet">
+	<script src="js/jquery-ui-timepicker-addon.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+	 <script src="js/date.js "></script>
+
+	<link rel='STYLESHEET' type='text/css' href='codebase/dhtmlxscheduler.css'>
+	<script src='codebase/dhtmlxscheduler.js' type="text/javascript" charset="utf-8"></script>
+	<link rel='STYLESHEET' type='text/css' href='css/icons.css'>
+ 
+	
+	<script src="codebase/ext/dhtmlxscheduler_year_view.js" type="text/javascript" charset="utf-8"></script>
+	<script src="codebase/ext/dhtmlxscheduler_serialize.js" type="text/javascript" charset="utf-8"></script>
+	 
+
+  <link rel="stylesheet" href="css/morris.css">
+  <link rel="stylesheet" href="css/diary.css">
+
+<script src="js/d3.v3.js"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+<script src="js/diary.js"></script>
+
+</head>
+
+
+<body onload="init();">
+
+	<div id="event_form">
+		<div id="event_title">
+		</div>
+		<div id="event_content">
+			<label for="Text">Title</label><input type="text" name="text" value="" id="text"><br>
+			<div>
+				<label for="start_date">Start Time</label>
+				<input type="text" name="start_date" value="" id="start_date" onclick="">
+				<label for="end_date">End Time</label>
+				<input type="text" name="end_date" value="" id="end_date">
+				<br>
+			</div>
+
+			<label for="Location">Location</label><input type="text" name="location" value="" id="location"><br>
+			<label for="Tags">Tags</label><input type="text" name="tags" value="" id="tags" onfocus="getSource()"><br><br>
+			<label for="Details">Details</label>
+			<textarea rows="4" cols="50" name="details" value="" id="details"></textarea> <br>
+			
+		</div>
+		<div id="event_buttons">
+			<input type="button" name="save" value="Save" id="save" style='width:100px;' onclick="save_form()">
+			<input type="button" name="cancel" value="Cancel" id="close" style='width:100px;' onclick="close_form('event_form')">
+			<input type="button" name="delete" value="Delete" id="delete" style='width:100px;' onclick="delete_event()">
+		</div>
+		
+	</div>
+
+
+	<div id="scheduler_here" class="dhx_cal_container" style='width:auto; height:100%;'>
+		<div class="dhx_cal_navline">
+			<div class="dhx_cal_prev_button">&nbsp;</div>
+			<div class="dhx_cal_next_button">&nbsp;</div>
+			<div class="dhx_cal_today_button"></div>
+			<div class="dhx_cal_date"></div>
+			<div class="dhx_cal_tab" name="day_tab" style="right:204px;"></div>
+			<div class="dhx_cal_tab" name="week_tab" style="right:140px;"></div>
+			<div class="dhx_cal_tab" name="month_tab" style="right:76px;"></div>
+
+		</div>
+		<div class="dhx_cal_header">
+		</div>
+		<div class="dhx_cal_data">
+		</div>
+	</div>
+</body>
+</html>
